@@ -1,0 +1,8 @@
+INPUT:
+database, login, web server
+
+OUTPUT:
+- Spoofing on database: Fake identity or credentials used to access components.
+- Brute-force login: No rate limiting or lockout allows credential guessing.
+- XSS attack: Unsanitized user inputs can be executed by browsers.
+-

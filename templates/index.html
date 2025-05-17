@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threat Modeling and Risk Assessment Tool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script> <!-- Using Vue.js for reactivity -->
+</head>
+<body>
+    <div id="app" class="container mt-5">
+        <h1 class="text-center">Threat Modeling and Risk Assessment Tool</h1>
+
+        <!-- Template Selection -->
+        <div class="mb-4">
+            <label for="template" class="form-label">Choose a Threat Modeling Template</label>
+            <select v-model="selectedTemplate" class="form-select" id="template">
+                <option value="STRIDE">STRIDE</option>
+                <option value="PASTA">PASTA</option>
+                <option value="OCTAVE">OCTAVE</option>
+                <!-- Add more templates as needed -->
+            </select>
+        </div>
+
+        <!-- Asset and Threat Input Form -->
+        <div class="mb-4">
+            <label for="assetName" class="form-label">Asset Name</label>
+            <input type="text" v-model="assetName" class="form-control" id="assetName" placeholder="Enter asset name">
+        </div>
+
+        <div class="mb-4">
+            <label for="threatDescription" class="form-label">Threat Description</label>
+            <input type="text" v-model="threatDescription" class="form-control" id="threatDescription" placeholder="Enter threat description">
+        </div>
+
+        <div class="mb-4">
+            <label for="vulnerability" class="form-label">Vulnerability</label>
+            <input type="text" v-model="vulnerability" class="form-control" id="vulnerability" placeholder="Enter vulnerability">
+        </div>
+
+        <div class="mb-4">
+            <label for="riskLevel" class="form-label">Risk Level</label>
+            <select v-model="riskLevel" class="form-select" id="riskLevel">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+        </div>
+
+        <!-- Risk Assessment Button -->
+        <button @click="assessRisk" class="btn btn-primary">Assess Risk</button>
+
+        <!-- Output of Risk Assessment -->
+        <div v-if="riskAssessment" class="mt-4">
+            <h4>Risk Assessment Result</h4>
+            <p><strong>Template:</strong> {{ selectedTemplate }}</p>
+            <p><strong>Asset:</strong> {{ assetName }}</p>
+            <p><strong>Threat:</strong> {{ threatDescription }}</p>
+            <p><strong>Vulnerability:</strong> {{ vulnerability }}</p>
+            <p><strong>Risk Level:</strong> {{ riskLevel }}</p>
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                selectedTemplate: 'STRIDE',
+                assetName: '',
+                threatDescription: '',
+                vulnerability: '',
+                riskLevel: 'Low',
+                riskAssessment: null
+            },
+            methods: {
+                assessRisk() {
+                    // Placeholder for risk assessment logic
+                    this.riskAssessment = {
+                        template: this.selectedTemplate,
+                        asset: this.assetName,
+                        threat: this.threatDescription,
+                        vulnerability: this.vulnerability,
+                        risk: this.riskLevel
+                    };
+                    // You can send the data to the backend here for processing
+                    // For example:
+                    // axios.post('/risk', { ...this.riskAssessment })
+                    //      .then(response => { ... })
+                    //      .catch(error => { ... })
+                }
+            }
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

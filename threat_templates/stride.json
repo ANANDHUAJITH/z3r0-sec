@@ -1,0 +1,8 @@
+{
+    "Spoofing": "Fake identity or credentials used to access components.",
+    "Tampering": "Modification of data or code.",
+    "Repudiation": "Denial of actions by users without accountability.",
+    "Information Disclosure": "Sensitive data exposure.",
+    "Denial of Service": "Service unavailable due to overload or attack.",
+    "Elevation of Privilege": "User gains unauthorized rights."
+}

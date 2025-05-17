@@ -1,0 +1,49 @@
+/* General styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f4f8;
+}
+
+/* Header */
+h2 {
+  font-weight: bold;
+  color: #003366;
+}
+
+/* Card appearance */
+.card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #dee2e6;
+}
+
+/* Form elements */
+input, textarea {
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+/* Button */
+.btn-success {
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+/* Results styling */
+#results .alert {
+  border-radius: 10px;
+  padding: 15px;
+}
+
+#results h5 {
+  color: #c0392b;
+}
+
+/* Responsive spacing */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+}

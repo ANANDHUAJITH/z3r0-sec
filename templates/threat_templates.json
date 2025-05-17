@@ -1,0 +1,14 @@
+[
+    {
+      "component": "database",
+      "threat": "SQL Injection risk if inputs not sanitized"
+    },
+    {
+      "component": "web server",
+      "threat": "Cross-Site Scripting (XSS) possible via user input"
+    },
+    {
+      "component": "login",
+      "threat": "Brute force attacks if no rate limiting"
+    }
+  ]
